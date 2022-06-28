@@ -8,9 +8,6 @@ export default function Header() {
       <Link to="/">
         <Button>Home</Button>
       </Link>
-      <Link to="/cocina">
-        <Button>Cocina</Button>
-      </Link>
       <Link to="bodega">
         <Button>Bodega</Button>
       </Link>

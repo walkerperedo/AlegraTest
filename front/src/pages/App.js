@@ -15,7 +15,6 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="bodega" element={<Bodega />} />
         <Route path="recetas" element={<Recetas />} />
-        <Route path="cocina" element={<Cocina />} />
       </Routes>
     </Container>
   );
