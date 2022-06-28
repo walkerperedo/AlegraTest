@@ -9,6 +9,7 @@ export default function Home() {
       <Grid container justify="center" spacing="12">
         <Ordenes title="Entregadas" />
         <Ordenes title="Realizadas" />
+        <Ordenes title="En preparacion" />
       </Grid>
     </>
   );

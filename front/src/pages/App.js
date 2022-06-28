@@ -9,7 +9,7 @@ import { Container } from "@mui/material";
 
 function App() {
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
