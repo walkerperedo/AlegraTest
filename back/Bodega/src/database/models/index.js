@@ -1,3 +1,3 @@
 module.exports = {
-  IngredintModel: require("./Ingredient"),
+  IngredientModel: require("./Ingredient"),
 };
