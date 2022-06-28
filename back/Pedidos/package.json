@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "NODE_ENV=prod nodemon src/index.js",
+    "dev": "NODE_ENV=dev nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +13,10 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "mongoose": "^6.4.1",
+    "path": "^0.12.7",
+    "winston": "^3.8.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.18"
