@@ -25,18 +25,34 @@ class BodegaService {
         ingredientId,
       });
 
+      let newQuantity = 0;
+
       if (ingredient.quantity > Number(quantity)) {
-        const newQuantity = ingredient.quantity - quantity;
-        return await this.repository.EditIngredient({
-          ingredientId,
-          quantity: newQuantity,
-        });
+        newQuantity = ingredient.quantity - quantity;
       } else {
+        let ingredientBoughtFromPlaza = 0;
+
         const answer = await axios.get(
           `https://recruitment.alegra.com/api/farmers-market/buy?ingredient=${ingredient.name}`
         );
-        return answer;
+
+        ingredientBoughtFromPlaza += answer.data.quantitySold;
+
+        while (ingredientBoughtFromPlaza < quantity) {
+          const moreIngredient = await axios.get(
+            `https://recruitment.alegra.com/api/farmers-market/buy?ingredient=${ingredient.name}`
+          );
+          ingredientBoughtFromPlaza += moreIngredient.data.quantitySold;
+        }
+
+        newQuantity =
+          ingredientBoughtFromPlaza + ingredient.quantity - quantity;
       }
+
+      return await this.repository.EditIngredient({
+        ingredientId,
+        quantity: newQuantity,
+      });
     } catch (error) {
       throw new APIError("Couldn't edit the ingrediente quantity", error);
     }
