@@ -15,11 +15,11 @@ class BodegaService {
       );
       return FormateData(ingredientResult);
     } catch (err) {
-      throw new APIError("Data not found");
+      throw (new APIError("Data not found"), err);
     }
   }
 
-  async EditIngredient(ingredientId, quantity) {
+  async EditIngredient({ ingredientId, quantity }) {
     try {
       const ingredient = await this.repository.FindIngredientById({
         ingredientId,
@@ -38,6 +38,10 @@ class BodegaService {
         console.log(answer.payload);
         return answer;
       }
-    } catch (error) {}
+    } catch (error) {
+      throw new APIError("Couldn't edit the ingrediente quantity", err);
+    }
   }
 }
+
+module.exports = BodegaService;
