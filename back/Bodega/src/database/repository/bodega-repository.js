@@ -16,9 +16,9 @@ class BodegaRepository {
     }
   }
 
-  async EditIngredient({ name, quantity }) {
+  async EditIngredient({ ingredientId, quantity }) {
     try {
-      const ingredient = await IngredientModel.findOne({ name });
+      const ingredient = await IngredientModel.findById(ingredientId);
       if (ingredient) {
         ingredient.quantity = quantity;
         return await ingredient.save();
@@ -32,4 +32,22 @@ class BodegaRepository {
       );
     }
   }
+
+  async FindIngredientById({ ingredientId }) {
+    try {
+      const ingredient = await IngredientModel.findById(ingredientId);
+      if (ingredient) {
+        return ingredient;
+      }
+      return {};
+    } catch (err) {
+      throw APIError(
+        "API Error",
+        STATUS_CODES.BAD_REQUEST,
+        "Unable to find ingredient"
+      );
+    }
+  }
 }
+
+module.exports = BodegaRepository;
