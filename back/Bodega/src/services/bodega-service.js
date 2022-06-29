@@ -25,7 +25,7 @@ class BodegaService {
         ingredientId,
       });
 
-      if (ingredient.quantity < quantity) {
+      if (ingredient.quantity > Number(quantity)) {
         const newQuantity = ingredient.quantity - quantity;
         return await this.repository.EditIngredient({
           ingredientId,
@@ -35,11 +35,10 @@ class BodegaService {
         const answer = await axios.get(
           `https://recruitment.alegra.com/api/farmers-market/buy?ingredient=${ingredient.name}`
         );
-        console.log(answer.payload);
         return answer;
       }
     } catch (error) {
-      throw new APIError("Couldn't edit the ingrediente quantity", err);
+      throw new APIError("Couldn't edit the ingrediente quantity", error);
     }
   }
 }

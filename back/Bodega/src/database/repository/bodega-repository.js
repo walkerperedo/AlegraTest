@@ -22,10 +22,13 @@ class BodegaRepository {
   async EditIngredient({ ingredientId, quantity }) {
     try {
       const ingredient = await IngredientModel.findById(ingredientId);
+
       if (ingredient) {
         ingredient.quantity = quantity;
-        return await ingredient.save();
+        await ingredient.save();
+        return { message: `${ingredient.name} modified` };
       }
+
       return {};
     } catch (err) {
       throw APIError(
