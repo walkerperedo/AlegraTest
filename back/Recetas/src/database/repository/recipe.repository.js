@@ -1,6 +1,15 @@
 const { RecipeModel } = require("../models");
 
 class RecipeRepository {
+  async DeleteAllRecipes() {
+    try {
+      await RecipeModel.deleteMany({});
+      return { message: "success" };
+    } catch (err) {
+      throw new APIError("API Error", STATUS_CODES.INTERNAL_ERROR, err);
+    }
+  }
+
   async CreateManyRecipes(array) {
     try {
       const recipesResult = await RecipeModel.insertMany(array);

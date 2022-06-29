@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Pollo asado",
+    "ingredients": ["rice", "chicken", "potato", "ketchup"],
+    "number": 1,
+    "preparacion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi est adipisci repudiandae dignissimos ab pariatur ut iste impedit laudantium, molestiae quo odit eaque quibusdam doloremque tempora non voluptatum sit. Ipsum?"
+  },
+  {
+    "name": "Asado con Chorrellana",
+    "ingredients": ["meat", "onion", "tomato"],
+    "number": 2,
+    "preparacion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi est adipisci repudiandae dignissimos ab pariatur ut iste impedit laudantium, molestiae quo odit eaque quibusdam doloremque tempora non voluptatum sit. Ipsum?"
+  },
+  {
+    "name": "Ensalada con queso",
+    "ingredients": ["cheese", "lettuce", "lemon", "tomato"],
+    "number": 3,
+    "preparacion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi est adipisci repudiandae dignissimos ab pariatur ut iste impedit laudantium, molestiae quo odit eaque quibusdam doloremque tempora non voluptatum sit. Ipsum?"
+  },
+  {
+    "name": "Revuelto de carne",
+    "ingredients": ["rice", "meat", "potato"],
+    "number": 4,
+    "preparacion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi est adipisci repudiandae dignissimos ab pariatur ut iste impedit laudantium, molestiae quo odit eaque quibusdam doloremque tempora non voluptatum sit. Ipsum?"
+  },
+  {
+    "name": "Pollo frito",
+    "ingredients": ["lettuce", "chicken", "potato"],
+    "number": 5,
+    "preparacion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi est adipisci repudiandae dignissimos ab pariatur ut iste impedit laudantium, molestiae quo odit eaque quibusdam doloremque tempora non voluptatum sit. Ipsum?"
+  },
+  {
+    "name": "Pizze",
+    "ingredients": ["ketchup", "tomato", "cheese"],
+    "number": 6,
+    "preparacion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi est adipisci repudiandae dignissimos ab pariatur ut iste impedit laudantium, molestiae quo odit eaque quibusdam doloremque tempora non voluptatum sit. Ipsum?"
+  }
+]

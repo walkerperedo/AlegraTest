@@ -9,4 +9,4 @@ const RecipeSchema = new Schema({
   preparacion: String,
 });
 
-module.exports = mongoose.model("ingredient", RecipeSchema);
+module.exports = mongoose.model("recipe", RecipeSchema);
