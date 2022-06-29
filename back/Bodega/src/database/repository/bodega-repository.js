@@ -2,17 +2,20 @@ const { IngredientModel } = require("../models");
 const { STATUS_CODES, APIError } = require("../../utils/app-errors");
 
 class BodegaRepository {
-  async CreateIngredient({ name, quantity }) {
+  async CreateIngredients(array) {
     try {
-      const ingredient = new IngredientModel({ name, quantity });
-      const ingredientResult = await ingredient.save();
+      const ingredientResult = await IngredientModel.insertMany(array);
       return ingredientResult;
     } catch (err) {
-      throw APIError(
-        "API Error",
-        STATUS_CODES.INTERNAL_ERROR,
-        "Unable to create ingredient"
-      );
+      throw new APIError("API Error", STATUS_CODES.INTERNAL_ERROR, err);
+    }
+  }
+
+  async DeleteAllIngredients() {
+    try {
+      await IngredientModel.deleteMany({});
+    } catch (error) {
+      throw new APIError("API Error", STATUS_CODES.INTERNAL_ERROR, err);
     }
   }
 
