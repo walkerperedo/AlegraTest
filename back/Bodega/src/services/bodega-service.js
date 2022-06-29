@@ -32,12 +32,6 @@ class BodegaService {
       } else {
         let ingredientBoughtFromPlaza = 0;
 
-        const answer = await axios.get(
-          `https://recruitment.alegra.com/api/farmers-market/buy?ingredient=${ingredient.name}`
-        );
-
-        ingredientBoughtFromPlaza += answer.data.quantitySold;
-
         while (ingredientBoughtFromPlaza < quantity) {
           const moreIngredient = await axios.get(
             `https://recruitment.alegra.com/api/farmers-market/buy?ingredient=${ingredient.name}`
