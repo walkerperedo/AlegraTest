@@ -1,9 +1,9 @@
 const { OrderModel } = require("../models");
 
 class OrderRepository {
-  async CreateOrder() {
+  async CreateOrder({ recipeId }) {
     try {
-      return await OrderModel.create({ recipeId, state });
+      return await OrderModel.create({ recipeId });
     } catch (error) {
       throw new APIError("API Error", STATUS_CODES.INTERNAL_ERROR, error);
     }
@@ -20,3 +20,5 @@ class OrderRepository {
     }
   }
 }
+
+module.exports = OrderRepository;
