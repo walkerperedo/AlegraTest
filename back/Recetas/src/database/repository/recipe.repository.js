@@ -29,7 +29,7 @@ class RecipeRepository {
 
   async GetRecipeById(recipeId) {
     try {
-      await RecipeModel.findById(recipeId);
+      return await RecipeModel.findById(recipeId);
     } catch (err) {
       throw new APIError("API Error", STATUS_CODES.INTERNAL_ERROR, err);
     }

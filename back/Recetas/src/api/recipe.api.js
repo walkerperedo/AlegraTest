@@ -14,7 +14,7 @@ module.exports = (app) => {
     }
   });
 
-  app.get("/recipe/:recipeId", async (req, res) => {
+  app.get("/recipes/:recipeId", async (req, res) => {
     try {
       const recipeId = req.params.recipeId;
       const recipe = await service.GetRecipeById({ recipeId });
