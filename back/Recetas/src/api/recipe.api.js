@@ -4,7 +4,7 @@ const { STATUS_CODES } = require("../utils/app-errors");
 module.exports = (app) => {
   const service = new RecipeService();
 
-  app.get("/recipes", async (req, res) => {
+  app.get("/", async (req, res) => {
     try {
       const data = await service.GetAllRecipes();
       return res.status(STATUS_CODES.OK).json(data);
@@ -14,7 +14,7 @@ module.exports = (app) => {
     }
   });
 
-  app.get("/recipes/:recipeId", async (req, res) => {
+  app.get("/:recipeId", async (req, res) => {
     try {
       const recipeId = req.params.recipeId;
       const recipe = await service.GetRecipeById({ recipeId });
