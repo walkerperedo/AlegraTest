@@ -4,7 +4,7 @@ const { STATUS_CODES } = require("../utils/app-errors");
 module.exports = (app) => {
   const service = new OrderService();
 
-  app.post("/order", async (req, res) => {
+  app.post("/", async (req, res) => {
     try {
       const data = await service.CreateOrder({ recipeId: req.body.recipeId });
       return res.status(STATUS_CODES.OK).json(data);
@@ -14,7 +14,7 @@ module.exports = (app) => {
     }
   });
 
-  app.put("/order/:orderId", async (req, res) => {
+  app.put("/:orderId", async (req, res) => {
     try {
       const orderId = req.params.orderId;
       const state = req.body.state;

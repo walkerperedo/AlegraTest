@@ -1,12 +1,14 @@
-const { GetRecipe } = require("../utils");
+const { GetRecipe, CreateOrder } = require("../utils");
 
 class KitchenService {
   async CreateDish({ recipeId }) {
     try {
+      //Creamos un pedido
+      const order = await CreateOrder({ recipeId });
       //Buscamos la receta en especifico
       const recipe = await GetRecipe({ recipeId });
       //obtemos los ingredientes
-      //   const ingredients = recipe.ingredients;
+      const ingredients = recipe.ingredients;
       //le pedimos los ingredientes a la bodega
 
       //entregamos el plato
