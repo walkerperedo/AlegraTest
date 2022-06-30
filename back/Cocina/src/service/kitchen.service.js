@@ -7,7 +7,7 @@ class KitchenService {
       const order = await CreateOrder({ recipeId });
       //Buscamos la receta en especifico
       const recipe = await GetRecipe({ recipeId });
-      //obtemos los ingredientes
+      //obtemos los ingredientes con sus cantidades
       const ingredients = recipe.ingredients;
       //le pedimos los ingredientes a la bodega
 

@@ -1,37 +1,63 @@
 [
   {
     "name": "Pollo asado",
-    "ingredients": ["rice", "chicken", "potato", "ketchup"],
+    "ingredients": [
+      { "name": "rice", "quantity": 2 },
+      { "name": "chicken", "quantity": 1 },
+      { "name": "potato", "quantity": 1 },
+      { "name": "ketchup", "quantity": 1 }
+    ],
     "number": 1,
     "preparacion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi est adipisci repudiandae dignissimos ab pariatur ut iste impedit laudantium, molestiae quo odit eaque quibusdam doloremque tempora non voluptatum sit. Ipsum?"
   },
   {
     "name": "Asado con Chorrellana",
-    "ingredients": ["meat", "onion", "tomato"],
+    "ingredients": [
+      { "name": "meat", "quantity": 1 },
+      { "name": "onion", "quantity": 2 },
+      { "name": "tomato", "quantity": 2 }
+    ],
     "number": 2,
     "preparacion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi est adipisci repudiandae dignissimos ab pariatur ut iste impedit laudantium, molestiae quo odit eaque quibusdam doloremque tempora non voluptatum sit. Ipsum?"
   },
   {
     "name": "Ensalada con queso",
-    "ingredients": ["cheese", "lettuce", "lemon", "tomato"],
+    "ingredients": [
+      { "name": "cheese", "quantity": 1 },
+      { "name": "lettuce", "quantity": 1 },
+      { "name": "lemon", "quantity": 1 },
+      { "name": "tomato", "quantity": 1 }
+    ],
     "number": 3,
     "preparacion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi est adipisci repudiandae dignissimos ab pariatur ut iste impedit laudantium, molestiae quo odit eaque quibusdam doloremque tempora non voluptatum sit. Ipsum?"
   },
   {
     "name": "Revuelto de carne",
-    "ingredients": ["rice", "meat", "potato"],
+    "ingredients": [
+      { "name": "rice", "quantity": 1 },
+      { "name": "meat", "quantity": 2 },
+      { "name": "potato", "quantity": 1 }
+    ],
     "number": 4,
     "preparacion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi est adipisci repudiandae dignissimos ab pariatur ut iste impedit laudantium, molestiae quo odit eaque quibusdam doloremque tempora non voluptatum sit. Ipsum?"
   },
   {
     "name": "Pollo frito",
-    "ingredients": ["lettuce", "chicken", "potato"],
+    "ingredients": [
+      { "name": "lettuce", "quantity": 1 },
+      { "name": "chicken", "quantity": 2 },
+      { "name": "potato", "quantity": 1 }
+    ],
     "number": 5,
     "preparacion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi est adipisci repudiandae dignissimos ab pariatur ut iste impedit laudantium, molestiae quo odit eaque quibusdam doloremque tempora non voluptatum sit. Ipsum?"
   },
   {
     "name": "Pizze",
-    "ingredients": ["ketchup", "tomato", "cheese"],
+    "ingredients": [
+      { "name": "ketchup", "quantity": 2 },
+      { "name": "tomato", "quantity": 1 },
+      { "name": "cheese", "quantity": 2 }
+    ],
     "number": 6,
     "preparacion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi est adipisci repudiandae dignissimos ab pariatur ut iste impedit laudantium, molestiae quo odit eaque quibusdam doloremque tempora non voluptatum sit. Ipsum?"
   }

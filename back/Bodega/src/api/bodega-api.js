@@ -4,7 +4,7 @@ const { STATUS_CODES } = require("../utils/app-errors");
 module.exports = (app) => {
   const service = new BodegaService();
 
-  app.put("/bodega", async (req, res, next) => {
+  app.put("/", async (req, res, next) => {
     try {
       const { ingredientId, quantity } = req.body;
       const data = await service.EditIngredient({ ingredientId, quantity });
