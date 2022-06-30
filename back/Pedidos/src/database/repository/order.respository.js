@@ -2,6 +2,14 @@ const { APIError, STATUS_CODES } = require("../../utils/app-errors");
 const { OrderModel } = require("../models");
 
 class OrderRepository {
+  async GetManyOrders() {
+    try {
+      return await OrderModel.find({});
+    } catch (error) {
+      throw new APIError("API Error", STATUS_CODES.INTERNAL_ERROR, error);
+    }
+  }
+
   async CreateOrder({ recipeId }) {
     try {
       const order = await OrderModel.create({ recipeId });
