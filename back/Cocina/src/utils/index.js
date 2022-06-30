@@ -11,8 +11,8 @@ module.exports.UpdateOrder = async ({ orderId, state }) => {
   });
 };
 
-module.exports.CreateOrder = async ({ recipeId }) => {
-  const order = await axios.post(`http://localhost:8000/order`, { recipeId });
+module.exports.CreateOrder = async ({ recipeName }) => {
+  const order = await axios.post(`http://localhost:8000/order`, { recipeName });
   return order.data;
 };
 

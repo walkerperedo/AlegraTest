@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const OrderSchema = new Schema({
   status: { type: String, enum: ["delivered", "process"], default: "process" },
-  recipeName: String,
+  recipeName: { type: String, required: true },
 });
 OrderSchema.plugin(AutoIncrement, { inc_field: "number" });
 
