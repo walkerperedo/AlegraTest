@@ -14,4 +14,13 @@ module.exports = (app) => {
       // next(error);
     }
   });
+
+  app.get("/", async (req, res) => {
+    try {
+      const ingredients = await service.GetAllIngredients();
+      return res.status(STATUS_CODES.OK).json(ingredients);
+    } catch (error) {
+      res.status(STATUS_CODES.BAD_REQUEST).send(error.toString());
+    }
+  });
 };

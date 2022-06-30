@@ -8,6 +8,15 @@ class BodegaService {
     this.repository = new BodegaRepository();
   }
 
+  async GetAllIngredients() {
+    try {
+      const ingredientResult = await this.repository.GetAllIngredients();
+      return ingredientResult;
+    } catch (err) {
+      throw (new APIError("Data not found"), err);
+    }
+  }
+
   async CreateIngredient(ingredientInput) {
     try {
       const ingredientResult = await this.repository.CreateIngredient(
