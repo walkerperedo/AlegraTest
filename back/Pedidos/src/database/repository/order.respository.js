@@ -1,9 +1,11 @@
+const { APIError, STATUS_CODES } = require("../../utils/app-errors");
 const { OrderModel } = require("../models");
 
 class OrderRepository {
   async CreateOrder({ recipeId }) {
     try {
-      return await OrderModel.create({ recipeId });
+      const order = await OrderModel.create({ recipeId });
+      return order;
     } catch (error) {
       throw new APIError("API Error", STATUS_CODES.INTERNAL_ERROR, error);
     }
