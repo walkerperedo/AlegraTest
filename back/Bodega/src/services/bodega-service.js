@@ -19,10 +19,10 @@ class BodegaService {
     }
   }
 
-  async EditIngredient({ ingredientId, quantity }) {
+  async EditIngredient({ ingredientName, quantity }) {
     try {
-      const ingredient = await this.repository.FindIngredientById({
-        ingredientId,
+      const ingredient = await this.repository.FindIngredientByName({
+        ingredientName,
       });
 
       let newQuantity = 0;
@@ -44,7 +44,7 @@ class BodegaService {
       }
 
       return await this.repository.EditIngredient({
-        ingredientId,
+        ingredientId: ingredient._id,
         quantity: newQuantity,
       });
     } catch (error) {

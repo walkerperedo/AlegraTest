@@ -6,8 +6,8 @@ module.exports = (app) => {
 
   app.put("/", async (req, res, next) => {
     try {
-      const { ingredientId, quantity } = req.body;
-      const data = await service.EditIngredient({ ingredientId, quantity });
+      const { ingredientName, quantity } = req.body;
+      const data = await service.EditIngredient({ ingredientName, quantity });
       return res.status(STATUS_CODES.OK).json(data);
     } catch (error) {
       res.status(STATUS_CODES.BAD_REQUEST).send(error.toString());

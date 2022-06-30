@@ -39,9 +39,11 @@ class BodegaRepository {
     }
   }
 
-  async FindIngredientById({ ingredientId }) {
+  async FindIngredientByName({ ingredientName }) {
     try {
-      const ingredient = await IngredientModel.findById(ingredientId);
+      const ingredient = await IngredientModel.findOne({
+        name: ingredientName,
+      });
       if (ingredient) {
         return ingredient;
       }
