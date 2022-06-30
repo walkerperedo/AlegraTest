@@ -46,6 +46,8 @@ class BodegaService {
       return await this.repository.EditIngredient({
         ingredientId: ingredient._id,
         quantity: newQuantity,
+        quantityBoughtFromPlaza:
+          ingredient.quantityBoughtFromPlaza + ingredientBoughtFromPlaza,
       });
     } catch (error) {
       throw new APIError("Couldn't edit the ingrediente quantity", error);

@@ -19,12 +19,13 @@ class BodegaRepository {
     }
   }
 
-  async EditIngredient({ ingredientId, quantity }) {
+  async EditIngredient({ ingredientId, quantity, quantityBoughtFromPlaza }) {
     try {
       const ingredient = await IngredientModel.findById(ingredientId);
 
       if (ingredient) {
         ingredient.quantity = quantity;
+        ingredient.quantityBoughtFromPlaza = quantityBoughtFromPlaza;
         await ingredient.save();
         return { message: `${ingredient.name} modified` };
       }
