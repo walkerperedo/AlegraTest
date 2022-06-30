@@ -14,9 +14,9 @@ class OrderService {
     }
   }
 
-  async CreateOrder({ recipeId }) {
+  async CreateOrder({ recipeName }) {
     try {
-      return await this.repository.CreateOrder({ recipeId });
+      return await this.repository.CreateOrder({ recipeName });
     } catch (error) {
       throw (new APIError("Data not found"), error);
     }

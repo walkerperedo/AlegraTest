@@ -15,7 +15,9 @@ module.exports = (app) => {
 
   app.post("/", async (req, res) => {
     try {
-      const data = await service.CreateOrder({ recipeId: req.body.recipeId });
+      const data = await service.CreateOrder({
+        recipeName: req.body.recipeName,
+      });
       return res.status(STATUS_CODES.OK).json(data);
     } catch (error) {
       res.status(STATUS_CODES.BAD_REQUEST).send(error.toString());

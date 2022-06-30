@@ -10,10 +10,9 @@ class OrderRepository {
     }
   }
 
-  async CreateOrder({ recipeId }) {
+  async CreateOrder({ recipeName }) {
     try {
-      const order = await OrderModel.create({ recipeId });
-      return order;
+      return await OrderModel.create({ recipeName });
     } catch (error) {
       throw new APIError("API Error", STATUS_CODES.INTERNAL_ERROR, error);
     }
