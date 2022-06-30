@@ -8,20 +8,24 @@ import {
 } from "@mui/material";
 import React from "react";
 
-export default function Bodega() {
+export default function Bodega({ ingredients }) {
   return (
     <>
       <Typography variant="h4">Bodega</Typography>
       <Paper elevation={3}>
         <Grid>
-          <Typography variant="h5">Ingredintes y Cantidades</Typography>
+          <Typography variant="h5">Ingredientes y Cantidades</Typography>
           <List>
-            <ListItem>
-              <ListItemText primary="tomato 2" />
-            </ListItem>
-            <ListItem>
-              <ListItemText primary="onion 1" />
-            </ListItem>
+            {ingredients.map((ingredient) => (
+              <ListItem>
+                <ListItemText
+                  primary={`${ingredient.name} disponible: ${ingredient.quantity}`}
+                />
+                <ListItemText
+                  primary={`Cantidad comprada de bodega: ${ingredient.quantityBoughtFromPlaza}`}
+                />
+              </ListItem>
+            ))}
           </List>
         </Grid>
       </Paper>
