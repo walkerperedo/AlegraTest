@@ -1,7 +1,7 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import React from "react";
 
-export default function Ordenes({ title }) {
+export default function Ordenes({ title, orders }) {
   return (
     <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
       <Box sx={{ my: 3, mx: 2 }}>
@@ -13,13 +13,17 @@ export default function Ordenes({ title }) {
           </Grid>
         </Grid>
       </Box>
-      <Divider variant="middle" />
-      <Box sx={{ m: 2 }}>
-        <Typography gutterBottom variant="body1">
-          #1 Silpancho
-        </Typography>
-      </Box>
-      <Divider variant="middle" />
+      {orders.map((order) => (
+        <>
+          <Divider variant="middle" />
+          <Box sx={{ m: 2 }}>
+            <Typography gutterBottom variant="body1">
+              {order.number} {order.recipeName}
+            </Typography>
+          </Box>
+          <Divider variant="middle" />
+        </>
+      ))}
     </Box>
   );
 }
