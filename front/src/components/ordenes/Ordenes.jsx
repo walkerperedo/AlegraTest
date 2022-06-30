@@ -1,4 +1,4 @@
-import { Box, Chip, Divider, Grid, Stack, Typography } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import React from "react";
 
 export default function Ordenes({ title }) {
