@@ -4,6 +4,7 @@ const {
   getIngredient,
   UpdateOrder,
 } = require("../utils");
+const { APIError } = require("../utils/app-errors");
 
 class KitchenService {
   async CreateDish({ recipeId }) {
@@ -22,11 +23,13 @@ class KitchenService {
         });
       });
       await Promise.all(ingredientsPromises);
-
       //entregamos el plato
       await UpdateOrder({ orderId: order._id, state: "delivered" });
+
+      return { message: "succes" };
     } catch (error) {
       console.log(error);
+      throw (new APIError("Sorry, there was an error"), error);
     }
   }
 }
