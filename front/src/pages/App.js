@@ -27,7 +27,7 @@ function App() {
     <Container maxWidth="lg">
       <Header />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home recipes={recipes} />} />
         <Route path="bodega" element={<Bodega ingredients={ingredients} />} />
         <Route path="recetas" element={<Recetas recipes={recipes} />} />
       </Routes>

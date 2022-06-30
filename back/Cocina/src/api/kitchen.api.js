@@ -3,7 +3,7 @@ const KitchenService = require("../service/kitchen.service");
 
 module.exports = (app) => {
   const service = new KitchenService();
-  app.post("/kitchen", async (req, res) => {
+  app.post("/", async (req, res) => {
     try {
       const { recipeId } = req.body;
       const recipe = await service.CreateDish({ recipeId });
