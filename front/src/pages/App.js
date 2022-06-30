@@ -7,19 +7,13 @@ import Recetas from "./Recetas/Recetas";
 import { Container } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import recipesService from "../services/recipe.service";
-import warehouseService from "../services/warehouse.service";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
-  const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
     recipesService.getAll().then((recipes) => {
       setRecipes(recipes);
-    });
-
-    warehouseService.getAll().then((ingredient) => {
-      setIngredients(ingredient);
     });
   }, []);
 
@@ -28,7 +22,7 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Home recipes={recipes} />} />
-        <Route path="bodega" element={<Bodega ingredients={ingredients} />} />
+        <Route path="bodega" element={<Bodega />} />
         <Route path="recetas" element={<Recetas recipes={recipes} />} />
       </Routes>
     </Container>
