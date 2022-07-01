@@ -6,7 +6,8 @@ const Schema = mongoose.Schema;
 const OrderSchema = new Schema({
   status: { type: String, enum: ["delivered", "process"], default: "process" },
   recipeName: { type: String, required: true },
+  number: { type: Number, default: 1 },
 });
-OrderSchema.plugin(AutoIncrement, { inc_field: "number" });
+OrderSchema.plugin(AutoIncrement, { id: "num", inc_field: "number" });
 
 module.exports = mongoose.model("order", OrderSchema);

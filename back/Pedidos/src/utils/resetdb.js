@@ -14,8 +14,12 @@ mongoose
   });
 
 const deleteOrders = async () => {
-  await OrderModel.deleteMany({});
-  await OrderModel.counterReset("number");
+  try {
+    await OrderModel.deleteMany({});
+    await OrderModel.counterReset("num");
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 deleteOrders().then(() => {
