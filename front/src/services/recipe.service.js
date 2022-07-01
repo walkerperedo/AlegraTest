@@ -6,6 +6,10 @@ const recipesService = {
     const res = await axios.get(PATH);
     return res.data;
   },
+  getOne: async (recipeId) => {
+    const res = await axios.get(`${PATH}/${recipeId}`);
+    return res.data;
+  },
 };
 
 export default recipesService;
