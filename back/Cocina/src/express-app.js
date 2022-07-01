@@ -4,7 +4,7 @@ const { appEvents } = require("./api");
 const HandleErrors = require("./utils/error-handler");
 const kitchenApi = require("./api/kitchen.api");
 
-module.exports = async (app) => {
+module.exports = async (app, channel) => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
   app.use(cors());
@@ -14,7 +14,7 @@ module.exports = async (app) => {
   appEvents(app);
 
   //api
-  kitchenApi(app);
+  kitchenApi(app, channel);
 
   //error handling
   app.use(HandleErrors);
