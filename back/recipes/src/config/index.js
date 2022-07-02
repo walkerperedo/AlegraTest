@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== "prod") {
   const configFile = path.resolve(__dirname, `../.env.${process.env.NODE_ENV}`);
   dotEnv.config({ path: configFile });
 } else {
-  dotEnv.config();
+  dotEnv.config({ path: path.resolve(__dirname, `../.env`) });
 }
 
 module.exports = {
@@ -16,4 +16,5 @@ module.exports = {
   // WAREHOUSE_BINDING_KEY: "WAREHOUSE_SERVICE",
   // ORDER_BINDING_KEY: "ORDER_SERVICE",
   // RECIPE_BINDING_KEY: "RECIPES_SERVICE",
+  // KITCHEN_BINDING_KEY: "KITCHEN_SERVICE",
 };

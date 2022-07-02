@@ -1,0 +1,58 @@
+version: "3"
+services:
+  nosql-db:
+    image: mongo
+    ports:
+      - "27018:27018"
+    container_name: nosql-db
+    volumes:
+      - ./db/:/data/db
+
+  warehouse:
+    build:
+      dockerfile: dockerfile
+      context: ./warehouse
+    container_name: warehouse
+    ports:
+      - "8001:8001"
+    depends_on:
+      - "nosql-db"
+    volumes:
+      - .:/app
+      - /app/warehouse/node_modules
+
+  order:
+    build:
+      dockerfile: dockerfile
+      context: ./order
+    container_name: order
+    ports:
+      - "8003:8003"
+    depends_on:
+      - "nosql-db"
+    volumes:
+      - .:/app
+      - /app/order/node_modules
+
+  recipes:
+    build:
+      dockerfile: dockerfile
+      context: ./recipes
+    container_name: recipes
+    ports:
+      - "8004:8004"
+    depends_on:
+      - "nosql-db"
+    volumes:
+      - .:/app
+      - /app/recipes/node_modules
+  ngnix-proxy:
+    build:
+      dockerfile: Dockerfile
+      context: ./proxy
+    depends_on:
+      - warehouse
+      - order
+      - recipes
+    ports:
+      - "81:81"

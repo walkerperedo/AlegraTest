@@ -26,7 +26,6 @@ module.exports.SubscribeMessage = async (channel, service, binding_key) => {
 
 module.exports.PublishMessage = async (channel, binding_key, message) => {
   try {
-    console.log("ESTOY ENVIANDO DATA", message);
     await channel.publish(EXCHANGE_NAME, binding_key, Buffer.from(message));
   } catch (error) {
     console.log(error);

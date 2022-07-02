@@ -1,6 +1,5 @@
 const { KITCHEN_BINDING_KEY } = require("../config");
 const RecipeService = require("../services/recipe.service");
-const { PublishMessage } = require("../utils");
 const { STATUS_CODES } = require("../utils/app-errors");
 
 module.exports = (app, channel) => {
@@ -20,7 +19,6 @@ module.exports = (app, channel) => {
     try {
       const recipeId = req.params.recipeId;
       const recipe = await service.GetRecipeById({ recipeId });
-      PublishMessage(channel, KITCHEN_BINDING_KEY, JSON.stringify({ recipe }));
       return res.status(STATUS_CODES.OK).json(recipe);
     } catch (error) {
       res.status(STATUS_CODES.BAD_REQUEST).send(error.toString());

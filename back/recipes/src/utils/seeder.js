@@ -3,7 +3,7 @@ const data = require("../data.json");
 const { RecipeRepository } = require("../database");
 
 mongoose
-  .connect("mongodb://localhost:27017/bodega", {
+  .connect("mongodb://nosql-db:27017/bodega", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
