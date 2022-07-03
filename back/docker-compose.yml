@@ -46,6 +46,17 @@ services:
     volumes:
       - .:/app
       - /app/recipes/node_modules
+
+  recipes-seed:
+    build: ./recipes-seed
+    depends_on:
+      - "nosql-db"
+
+  warehosue-seed:
+    build: ./warehouse-seed
+    depends_on:
+      - "nosql-db"
+
   ngnix-proxy:
     build:
       dockerfile: Dockerfile
