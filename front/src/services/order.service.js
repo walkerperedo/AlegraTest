@@ -1,5 +1,5 @@
 import axios from "axios";
-const PATH = "http://localhost:8000/order";
+const PATH = "http://localhost:81/order";
 
 const OrderService = {
   getOrders: async () => {
@@ -11,7 +11,7 @@ const OrderService = {
     return order.data;
   },
   updateOrder: async ({ orderId, state }) => {
-    await axios.put(`http://localhost:8000/order/${orderId}`, {
+    await axios.put(`${PATH}/${orderId}`, {
       state,
     });
   },

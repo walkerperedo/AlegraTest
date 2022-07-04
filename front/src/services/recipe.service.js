@@ -1,5 +1,5 @@
 import axios from "axios";
-const PATH = "http://localhost:8000/recipes";
+const PATH = "http://localhost:8004";
 
 const recipesService = {
   getAll: async () => {

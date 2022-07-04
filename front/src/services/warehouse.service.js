@@ -1,5 +1,5 @@
 import axios from "axios";
-const PATH = "http://localhost:8000/warehouse";
+const PATH = "http://localhost:81";
 
 const warehouseService = {
   getAll: async () => {
