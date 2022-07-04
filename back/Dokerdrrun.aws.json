@@ -1,0 +1,53 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "nginx",
+      "image": "walkerperedo/dkr-multicontainer-app-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 81,
+          "containerPort": 81
+        }
+      ],
+      "links": ["warehouse", "order", "recipes"],
+      "memory": 100
+    },
+    {
+      "name": "nosql-db",
+      "image": "mongo",
+      "hostname": "nosql-db",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 27017,
+          "containerPort": 27017
+        }
+      ],
+      "memory": 300
+    },
+    {
+      "name": "warehouse",
+      "image": "walkerperedo/dkr-multicontainer-app-warehouse",
+      "hostname": "warehouse",
+      "essential": false,
+      "memory": 300
+    },
+    {
+      "name": "order",
+      "image": "walkerperedo/dkr-multicontainer-app-order",
+      "hostname": "order",
+      "essential": false,
+      "memory": 300
+    },
+    {
+      "name": "recipes",
+      "image": "walkerperedo/dkr-multicontainer-app-recipes",
+      "hostname": "order",
+      "essential": false,
+      "memory": 300
+    }
+  ]
+}
